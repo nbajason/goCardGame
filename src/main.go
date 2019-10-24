@@ -27,7 +27,3 @@ func print() {
 func shuffle() {
 
 }
-
-func saveToFile() {
-
-}

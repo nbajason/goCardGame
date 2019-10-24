@@ -1,17 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"io/ioutil"
+)
 
 // type deck: slice of string
 type deck []string
 
 // d = first letter of deck
 func (d deck) print() {
-	fmt.Println("==========with index========")
+	fmt.Println("==========deck with index========")
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
-
 }
 
 func deal(d deck, handSize int) (deck, deck) {
@@ -28,6 +30,9 @@ func newDeck() deck {
 			cards = append(cards, value+" of "+suit)
 		}
 	}
-
 	return cards
+}
+
+func saveToFile() {
+	ioutil.WriteFile("", cards)
 }
