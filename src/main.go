@@ -13,9 +13,13 @@ func main() {
 	// var car string = ""
 
 	cards = newDeck()
-	cards.print()
+	handCards, remainingCards := deal(cards, 5)
+
+	handCards.print()
+	remainingCards.print()
 
 }
+
 func print() {
 
 }
