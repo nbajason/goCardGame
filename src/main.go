@@ -5,7 +5,8 @@ import "fmt"
 // var card string = "test"
 // array: fixed
 // sclice: grow / shrink
-var cards deck
+var handCards deck
+var remainingCards deck
 
 func main() {
 	// *** manually create new card deck
@@ -14,9 +15,13 @@ func main() {
 	// cardList = append(cardList, newCard())
 	// basic type: bool string int float64
 
+	handCards = newDeckFromFile("myCards.txt")
+	remainingCards = newDeckFromFile("remainingCards.txt")
+
 	// *** deal
-	cards = newDeck()
-	handCards, remainingCards := deal(cards, 5)
+	handCards, remainingCards := deal(handCards, 5)
+
+	// *** read cards from file
 
 	handCards.print()
 	remainingCards.print()
@@ -26,6 +31,6 @@ func main() {
 	// fmt.Println([]byte(cards.toString()))
 
 	// ** save to file
-	cards.saveToFile("myCards.txt")
-	cards.saveToFile("remainingCards.txt")
+	handCards.saveToFile("myCards.txt")
+	handCards.saveToFile("remainingCards.txt")
 }
